@@ -23,13 +23,13 @@ public static class StudentEndpoints
     {
         routes.MapGet("/api/Student", async (WebApiDbContext db) =>
         {
-            return await db.Students.ToListAsync();
+            return await db.Student.ToListAsync();
         })
         .WithName("GetAllStudents");
 
         routes.MapGet("/api/Student/{id}", async (int Id, WebApiDbContext db) =>
         {
-            return await db.Students.FindAsync(Id)
+            return await db.Student.FindAsync(Id)
                 is Student model
                     ? Results.Ok(model)
                     : Results.NotFound();
@@ -38,7 +38,7 @@ public static class StudentEndpoints
 
         routes.MapPut("/api/Student/{id}", async (int Id, Student student, WebApiDbContext db) =>
         {
-            var foundModel = await db.Students.FindAsync(Id);
+            var foundModel = await db.Student.FindAsync(Id);
 
             if (foundModel is null)
             {
@@ -55,7 +55,7 @@ public static class StudentEndpoints
 
         routes.MapPost("/api/Student/", async (Student student, WebApiDbContext db) =>
         {
-            db.Students.Add(student);
+            db.Student.Add(student);
             await db.SaveChangesAsync();
             return Results.Created($"/Students/{student.Id}", student);
         })
@@ -64,9 +64,9 @@ public static class StudentEndpoints
 
         routes.MapDelete("/api/Student/{id}", async (int Id, WebApiDbContext db) =>
         {
-            if (await db.Students.FindAsync(Id) is Student student)
+            if (await db.Student.FindAsync(Id) is Student student)
             {
-                db.Students.Remove(student);
+                db.Student.Remove(student);
                 await db.SaveChangesAsync();
                 return Results.Ok(student);
             }

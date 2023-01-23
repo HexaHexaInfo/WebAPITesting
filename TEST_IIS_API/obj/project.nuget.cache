@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XKzD2o9TjQ3VRio+WgvfiaX+9LneXyDsXBGBiN5GEfjWj0IWNrL8eTKmFEC5ygVQIV4TdaclQV6XbsYtFW35jA==",
+  "dgSpecHash": "MKzfth1KYWqt7vG2D+3hRMeTnVlYCWI+K6ouMk8W1yxEVJr07Y6vbRqnl+gSlTvAhg1NrAN6qumyx2ak5nax/g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\BTS\\source\\repos\\TEST_IIS_API\\TEST_IIS_API\\TEST_IIS_API.csproj",
+  "projectFilePath": "C:\\Users\\BTS\\source\\repos\\WebAPIsTesting\\WebAPITesting\\TEST_IIS_API\\TEST_IIS_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BTS\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\BTS\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

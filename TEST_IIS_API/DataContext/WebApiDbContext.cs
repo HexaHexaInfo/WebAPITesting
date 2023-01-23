@@ -14,11 +14,11 @@ public partial class WebApiDbContext : DbContext
     {
     }
 
-    public virtual DbSet<Bed> Beds { get; set; }
+    public virtual DbSet<Bed> Bed { get; set; }
 
-    public virtual DbSet<Employee> Employees { get; set; }
+    public virtual DbSet<Employee> Employee { get; set; }
 
-    public virtual DbSet<Student> Students { get; set; }
+    public virtual DbSet<Student> Student { get; set; }
 
    
 }

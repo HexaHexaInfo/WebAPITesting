@@ -25,14 +25,14 @@ namespace TEST_IIS_API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
         {
-            return await _context.Students.ToListAsync();
+            return await _context.Student.ToListAsync();
         }
 
         // GET: api/Students/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Student>> GetStudent(int id)
         {
-            var student = await _context.Students.FindAsync(id);
+            var student = await _context.Student.FindAsync(id);
 
             if (student == null)
             {
@@ -78,7 +78,7 @@ namespace TEST_IIS_API.Controllers
         [HttpPost]
         public async Task<ActionResult<Student>> PostStudent(Student student)
         {
-            _context.Students.Add(student);
+            _context.Student.Add(student);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetStudent", new { id = student.Id }, student);
@@ -88,13 +88,13 @@ namespace TEST_IIS_API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteStudent(int id)
         {
-            var student = await _context.Students.FindAsync(id);
+            var student = await _context.Student.FindAsync(id);
             if (student == null)
             {
                 return NotFound();
             }
 
-            _context.Students.Remove(student);
+            _context.Student.Remove(student);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +102,7 @@ namespace TEST_IIS_API.Controllers
 
         private bool StudentExists(int id)
         {
-            return _context.Students.Any(e => e.Id == id);
+            return _context.Student.Any(e => e.Id == id);
         }
     }
 }
